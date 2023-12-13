@@ -1,0 +1,36 @@
+﻿@model Producto_CRUD.Models.TiposProducto
+
+@{
+    ViewData["Title"] = "Editar";
+}
+
+<h1 class="color-primario">Crear</h1>
+
+<h4>Tipos de producto</h4>
+<hr />
+<div class="row">
+    <div>
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="IdTipo" />
+            <div class="contendor-form">
+                <div class="contenedor-input">
+                    <div class="form-group">
+                        <label asp-for="NombreTipo" class="control-label">Nombre del tipo de producto</label>
+                        <input asp-for="NombreTipo" class="form-control" />
+                        <span asp-validation-for="NombreTipo" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <input type="submit" value="Crear tipo de producto" class="boton-submit" />
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Regresar</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

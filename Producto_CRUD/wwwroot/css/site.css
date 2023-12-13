@@ -1,0 +1,142 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+a {
+    text-decoration: none !important;
+    color: #000 !important;
+}
+
+
+.contenedor{
+    width: 100%;
+    height:75vh;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    gap:60px;
+    flex-wrap: wrap;
+}
+
+
+.tarjeta {
+    width: 250px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    border-radius: 10px;
+    border-top: 5px solid #43CCC5;
+    border-bottom: 5px solid #43CCC5;
+    box-shadow: 1px 1px 8px rgb(128, 128, 128);
+    transition: transform .3s ease-in-out;
+}
+
+.tarjeta i{
+    color: gray;
+    font-size: 50px;
+    color: #43CCC5;
+}
+
+.tarjeta:hover{
+    transform: scale(1.04);
+}
+
+.contendor-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border-top: 10px solid #43CCC5;
+    border-bottom: 10px solid #43CCC5;
+}
+
+@media (min-width: 768px) {
+    .contendor-form {
+        flex-direction: row;
+        gap: 70px;
+    }
+}
+
+.contenedor-input{
+    flex: 1;
+
+    margin:20px 0;
+}
+
+.boton-submit {
+    border: 1px solid #43CCC5;
+    background-color: transparent;
+    border-radius: 10px;
+    font-size: 20px;
+    width: 100%;
+    transition: transform .5s ease-in-out;
+}
+
+.boton-submit:hover {
+   transform: scale(1.01);
+}
+
+.color-primario {
+    color: #43CCC5;
+}
+
+
+
+.contenedor2 {
+    max-width: 800px;
+    margin: auto;
+}
+
+
+.tabla {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.tabla th, .tabla td {
+     padding: 12px;
+     border: 1px solid #dee2e6;
+     text-align: left;
+}
+
+.tabla th {
+     background-color: #43CCC5;
+     color: #fff;
+}
+
+.tabla tr:nth-child(even) {
+     background-color: #f9f9f9;
+}
+
+.tabla a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.tabla a:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="contenedor">
+    <a class="tarjeta" asp-controller="Productos" asp-action="Create">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <p>
+            Agregar producto
+        </p>
+    </a>
+
+    <a class="tarjeta" asp-controller="TiposProductos" asp-action="Create">
+        <i class="fa-solid fa-box"></i>
+        <p>
+            Agregar tipo de producto
+        </p>
+    </a>
+</div>

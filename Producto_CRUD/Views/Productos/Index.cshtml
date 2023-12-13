@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Producto_CRUD.Models.Producto>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+
+    <h1 class="color-primario">Productos</h1>
+
+    <table class="tabla">
+        <thead>
+            <tr>
+                <th>
+                    Nombre del producto
+                </th>
+                <th>
+                   Descripción del producto
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Precio)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Stock)
+                </th>
+                <th>
+                   Id tipo de producto
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NombreProducto)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DescripcionProducto)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Precio)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Stock)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IdTipoProductoNavigation.IdTipo)
+                    </td>
+                    <td>
+                    <a asp-action="Edit" asp-route-id="@item.IdProducto" class="btn btn-warning">Editar</a> |
+                    <a asp-action="Details" asp-route-id="@item.IdProducto" class="btn btn-success">Detalles</a> |
+                    <a asp-action="Delete" asp-route-id="@item.IdProducto" class="btn btn-danger">Eliminar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
