@@ -44,7 +44,7 @@ namespace Producto_CRUD.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("IdTipo,NombreTipo")] TiposProducto tiposProducto)
+        public async Task<IActionResult> Create(TiposProducto tiposProducto)
         {
             if (ModelState.IsValid)
             {
@@ -72,7 +72,7 @@ namespace Producto_CRUD.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("IdTipo,NombreTipo")] TiposProducto tiposProducto)
+        public async Task<IActionResult> Edit(int id, TiposProducto tiposProducto)
         {
             if (id != tiposProducto.IdTipo)
             {
@@ -123,18 +123,29 @@ namespace Producto_CRUD.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.TiposProductos == null)
-            {
-                return Problem("Entity set 'CrudpContext.TiposProductos'  is null.");
-            }
-            var tiposProducto = await _context.TiposProductos.FindAsync(id);
-            if (tiposProducto != null)
-            {
-                _context.TiposProductos.Remove(tiposProducto);
-            }
-            
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+                var tipoProducto = await _context.TiposProductos.FindAsync(id);
+
+                if (tipoProducto == null)
+                {
+                    return NotFound();
+                }
+
+                var productosVinculados = await _context.Productos
+                    .AnyAsync(p => p.IdTipoProducto == id);
+
+                if (productosVinculados)
+                {
+                    return RedirectToAction(nameof(ErrorDelete));
+                }
+
+                _context.TiposProductos.Remove(tipoProducto);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));  
+        }
+
+        public IActionResult ErrorDelete()
+        {
+            return View();
         }
 
         private bool TiposProductoExists(int id)

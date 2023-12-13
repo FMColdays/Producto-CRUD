@@ -46,7 +46,7 @@ namespace Producto_CRUD.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("IdProducto,NombreProducto,DescripcionProducto,Precio,Stock,IdTipoProducto")] Producto producto)
+        public async Task<IActionResult> Create(Producto producto)
         {
             if (ModelState.IsValid)
             {
@@ -76,7 +76,7 @@ namespace Producto_CRUD.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("IdProducto,NombreProducto,DescripcionProducto,Precio,Stock,IdTipoProducto")] Producto producto)
+        public async Task<IActionResult> Edit(int id, Producto producto)
         {
             if (id != producto.IdProducto)
             {

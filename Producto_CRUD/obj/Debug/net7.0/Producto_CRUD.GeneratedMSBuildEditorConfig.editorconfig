@@ -68,6 +68,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlwb3NQcm9kdWN0b3NcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[F:/Proyectos .NET/Producto_CRUD/Producto_CRUD/Views/TiposProductos/ErrorDelete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlwb3NQcm9kdWN0b3NcRXJyb3JEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [F:/Proyectos .NET/Producto_CRUD/Producto_CRUD/Views/TiposProductos/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlwb3NQcm9kdWN0b3NcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
